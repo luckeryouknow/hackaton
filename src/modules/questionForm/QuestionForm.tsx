@@ -13,7 +13,7 @@ export default function QuestionForm () {
 
             <form className={"flex flex-col gap-6 max-w-[560px] w-full mb-5 xl:mb-0"}>
               <div className={"flex flex-col gap-4 text-[20px] font-extrabold"}>
-                <label htmlFor={"name"}>Ім'я</label>
+                <label htmlFor={"name"}>Ім&apos;я</label>
                 <input className={"py-4 px-3 border-2 border-[#B0B0D3] rounded-[20px] outline-none text-[#28248E]"}
                        id={"name"} type="text"/>
               </div>

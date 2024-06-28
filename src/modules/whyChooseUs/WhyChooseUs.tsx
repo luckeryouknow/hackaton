@@ -35,7 +35,7 @@ export default function WhyChooseUs() {
         <div className={"flex flex-col xl:flex-row xl:justify-between xl:mt-[100px]"}>
           <div className={"flex flex-col gap-5 xl:gap-[220px] mt-[94px]"}>
             {prosLeft.map(item => (
-              <div className={"flex flex-row-reverse xl:flex-row items-start gap-[30px]"}>
+              <div className={"flex flex-row-reverse xl:flex-row items-start gap-[30px]"} key={item.heading}>
                 <div className={"flex flex-col gap-[10px] max-w-[360px] text-left xl:text-right"}>
                   <h2 className={"text-[18px] xl:text-[24px] font-extrabold"}>{item.heading}</h2>
                   <p className={"text-[16px] xl:text-[20px]"}>{item.text}</p>
@@ -47,7 +47,7 @@ export default function WhyChooseUs() {
           <Image className={"hidden xl:block"} src={"/whyChooseUs/rocket.png"} alt={"Rocket"} width={172} height={770}/>
           <div className={"flex flex-col gap-5 xl:gap-[274px] mt-5 xl:mt-[204px]"}>
             {prosRight.map(item => (
-              <div className={"flex items-start gap-[30px]"}>
+              <div className={"flex items-start gap-[30px]"} key={item.heading}>
                 <Image className={"w-[40px] h-[40px] xl:w-[88px] xl:h-[88px]"} width={40} height={40} src={item.image} alt={item.heading}/>
                 <div className={"flex flex-col gap-[10px] max-w-[360px] text-left"}>
                   <h2 className={"text-[18px] xl:text-[24px] font-extrabold"}>{item.heading}</h2>

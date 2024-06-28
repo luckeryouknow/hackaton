@@ -43,7 +43,7 @@ export default function SignUpForm () {
               className={"text-[20px] text-[#73738D] font-extrabold"}
               htmlFor={"name"}
             >
-              Ім'я <span className={"text-[#B0B0D3] text-[16px]"}>(Імʼя дитини Ви вкажете після регістрації)</span>
+              Ім&apos;я <span className={"text-[#B0B0D3] text-[16px]"}>(Ім&apos;я дитини Ви вкажете після регістрації)</span>
             </label>
             <input
               className={"py-4 px-3 border-2 border-[#B0B0D3] rounded-[20px] outline-none text-black font-extrabold text-[20px]"}
