@@ -78,7 +78,7 @@ function Tests() {
                 <img src={test.image_upload} alt={"Tiger"} width={330} height={350} />
                 <div className={"flex flex-col gap-3"}>
                   {test.answers.map((option: any, optionIndex: any) => {
-                    const audioRef = el => {
+                    const audioRef = (el: any) => {
                       audioRefs.current[testIndex * test.answers.length + optionIndex] = el;
                     };
 
