@@ -8,7 +8,7 @@ function Tests() {
   const [playingIndex, setPlayingIndex] = useState(null);
   const [selectedOption, setSelectedOption] = useState<{ index: any, isCorrect: any }>({ index: null, isCorrect: null });
   const [feedbackMessage, setFeedbackMessage] = useState("");
-  const audioRefs = useRef([]);
+  const audioRefs = useRef<any>();
   const [nextUrl, setNextUrl] = useState("");
 
   useEffect(() => {
