@@ -8,4 +8,5 @@ export { default as SignInForm } from "./signInForm/SignInForm";
 export { default as SignUpForm } from "./signUpForm/SignUpForm";
 export { default as StudyingProgram } from "./studyingProgram/StudyingProgram";
 export { default as Subscriptions } from "./subscriptions/Subscriptions";
+export { default as Tests } from "./tests/Tests";
 export { default as WhyChooseUs } from "./whyChooseUs/WhyChooseUs";
