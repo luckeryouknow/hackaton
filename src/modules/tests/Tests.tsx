@@ -12,7 +12,7 @@ function Tests() {
   const [nextUrl, setNextUrl] = useState("");
 
   useEffect(() => {
-    axios("http://127.0.0.1:8001/question_with_answer/")
+    axios("https://e94b-176-37-22-78.ngrok-free.app/question_with_answer/")
       .then(response => {
         const results = response.data.results;
         setData(results);
