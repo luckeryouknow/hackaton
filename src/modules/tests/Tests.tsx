@@ -2,13 +2,11 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
-import Image from 'next/image';
-import {boolean} from "yup";
 
 function Tests() {
   const [data, setData] = useState([]);
   const [playingIndex, setPlayingIndex] = useState(null);
-  const [selectedOption, setSelectedOption] = useState({ index: null, isCorrect: null });
+  const [selectedOption, setSelectedOption] = useState<{ index: any, isCorrect: any }>({ index: null, isCorrect: null });
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const audioRefs = useRef([]);
   const [nextUrl, setNextUrl] = useState("");
@@ -44,7 +42,7 @@ function Tests() {
       });
 
     setPlayingIndex(null);
-    setSelectedOption({});
+    setSelectedOption({ index: null, isCorrect: null });
     setFeedbackMessage(null);
   }
 
@@ -120,7 +118,7 @@ function Tests() {
               )}
             </div>
           ))}
-          <div className={"w-full"}>
+          <div className={"flex items-center flex-row-reverse w-full"}>
             <button className={"block w-fit ml-auto mr-0"} onClick={() => nextButtonHandler()}>
               <svg width="151" height="67" viewBox="0 0 151 67" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <mask id="path-1-outside-1_134_40560" maskUnits="userSpaceOnUse" x="0.791992" y="0" width="150"
