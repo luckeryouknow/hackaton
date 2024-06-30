@@ -46,7 +46,7 @@ function Tests() {
     setFeedbackMessage("");
   }
 
-  const handlePlayPause = (index: any, event) => {
+  const handlePlayPause = (index: any, event: any) => {
     const isPlaying = playingIndex === index;
     if (isPlaying) {
       audioRefs.current[index].pause();
