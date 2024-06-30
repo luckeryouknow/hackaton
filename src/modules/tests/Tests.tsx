@@ -43,7 +43,7 @@ function Tests() {
 
     setPlayingIndex(null);
     setSelectedOption({ index: null, isCorrect: null });
-    setFeedbackMessage(null);
+    setFeedbackMessage("");
   }
 
   const handlePlayPause = (index, event) => {
