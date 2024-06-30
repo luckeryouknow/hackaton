@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html className={"font-nunito font-medium"} lang="en">
       <body
-        className={"w-full h-screen"}
+        className={"w-full xl:h-screen"}
         style={{
           backgroundImage: "url(/quizzes/background.png)",
           backgroundSize: "cover",
