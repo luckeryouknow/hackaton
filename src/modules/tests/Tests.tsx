@@ -71,7 +71,7 @@ function Tests() {
     <section className={"py-5"}>
       <div className={"relative h-screen container mx-auto"}>
         <div className={"xl:absolute xl:top-1/2 xl:left-1/2 xl:transform xl:-translate-x-1/2 xl:-translate-y-1/2 mx-auto xl:mx-0 w-[300px] xl:w-[1000px] py-[20px] px-[20px] xl:px-[120px] xl:py-[100px] bg-white border-[8px] border-[#63CAE0] rounded-[30px]"}>
-          {data.map((test, testIndex) => (
+          {data.map((test: any, testIndex) => (
             <div key={test.id}>
               <h2 className={"font-extrabold text-center text-[30px] xl:text-[48px] mb-10"}>{test.question}</h2>
               <div className={"flex flex-col xl:flex-row items-center xl:gap-[120px]"}>
