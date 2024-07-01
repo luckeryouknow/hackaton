@@ -8,11 +8,11 @@ function Tests() {
   const [playingIndex, setPlayingIndex] = useState(null);
   const [selectedOption, setSelectedOption] = useState<{ index: any, isCorrect: any }>({ index: null, isCorrect: null });
   const [feedbackMessage, setFeedbackMessage] = useState("");
-  const audioRefs = useRef<any>();
+  const audioRefs = useRef<any>([]);
   const [nextUrl, setNextUrl] = useState("");
 
   useEffect(() => {
-    axios("https://e94b-176-37-22-78.ngrok-free.app/question_with_answer/")
+    axios("https://learnhub-6lw0.onrender.com/question_with_answer/")
       .then(response => {
         const results = response.data.results;
         setData(results);
@@ -71,13 +71,13 @@ function Tests() {
     <section className={"py-5"}>
       <div className={"relative h-screen container mx-auto"}>
         <div className={"xl:absolute xl:top-1/2 xl:left-1/2 xl:transform xl:-translate-x-1/2 xl:-translate-y-1/2 mx-auto xl:mx-0 w-[300px] xl:w-[1000px] py-[20px] px-[20px] xl:px-[120px] xl:py-[100px] bg-white border-[8px] border-[#63CAE0] rounded-[30px]"}>
-          {data.map((test: any, testIndex) => (
+          {data?.map((test: any, testIndex) => (
             <div key={test.id}>
               <h2 className={"font-extrabold text-center text-[30px] xl:text-[48px] mb-10"}>{test.question}</h2>
               <div className={"flex flex-col xl:flex-row items-center xl:gap-[120px]"}>
                 <img src={test.image_upload} alt={"Tiger"} width={330} height={350} />
                 <div className={"flex flex-col gap-3"}>
-                  {test.answers.map((option: any, optionIndex: any) => {
+                  {test?.answers?.map((option: any, optionIndex: any) => {
                     const audioRef = (el: any) => {
                       audioRefs.current[testIndex * test.answers.length + optionIndex] = el;
                     };
