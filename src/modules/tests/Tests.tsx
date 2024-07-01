@@ -12,6 +12,19 @@ function Tests() {
   const [nextUrl, setNextUrl] = useState("");
 
   useEffect(() => {
+    // axios("https://learnhub-6lw0.onrender.com/question_with_answer/")
+    //   .then(response => {
+    //     const results = response.data.results;
+    //     setData(results);
+    //     setNextUrl(response.data.next);
+    //
+    //     console.log(results);
+    //     console.log(response.data);
+    //     console.log(response.data);
+    //   })
+    //   .catch(error => {
+    //     console.error("Error fetching data:", error);
+    //   });
     fetch("https://learnhub-6lw0.onrender.com/question_with_answer/")
       .then(response => {
         if (!response.ok) {
