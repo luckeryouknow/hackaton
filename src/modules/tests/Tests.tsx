@@ -1,6 +1,8 @@
 "use client"
 
 import React, { useEffect, useState, useRef } from 'react';
+import axios from 'axios';
+
 function Tests() {
   const [data, setData] = useState([]);
   const [playingIndex, setPlayingIndex] = useState(null);
@@ -43,27 +45,24 @@ function Tests() {
       });
   }, []);
 
-  const nextButtonHandler = async () => {
-    try {
-      const response = await fetch(nextUrl, {referrerPolicy: "unsafe-url"});
-      if (!response.ok) {
-        new Error("Network response was not ok " + response.statusText);
-      }
-      const data = await response.json();
-      const results = data.results;
-      setData(results);
-      setNextUrl(data.next);
+  const nextButtonHandler = () => {
+    axios(nextUrl.replace("http://", "https://"))
+      .then(response => {
+        const results = response.data.results;
+        setData(results);
+        setNextUrl(response.data.next);
 
-      console.log(results);
-      console.log(data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
+        console.log(results);
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error("Error fetching data:", error);
+      });
 
     setPlayingIndex(null);
     setSelectedOption({ index: null, isCorrect: null });
     setFeedbackMessage("");
-  };
+  }
 
   const handlePlayPause = (index: any, event: any) => {
     const isPlaying = playingIndex === index;
