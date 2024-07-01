@@ -12,15 +12,20 @@ function Tests() {
   const [nextUrl, setNextUrl] = useState("");
 
   useEffect(() => {
-    axios("https://learnhub-6lw0.onrender.com/question_with_answer/")
+    fetch("https://learnhub-6lw0.onrender.com/question_with_answer/")
       .then(response => {
-        const results = response.data.results;
+        if (!response.ok) {
+          throw new Error("Network response was not ok " + response.statusText);
+        }
+        return response.json();
+      })
+      .then(data => {
+        const results = data.results;
         setData(results);
-        setNextUrl(response.data.next);
+        setNextUrl(data.next);
 
         console.log(results);
-        console.log(response.data);
-        console.log(response.data);
+        console.log(data);
       })
       .catch(error => {
         console.error("Error fetching data:", error);

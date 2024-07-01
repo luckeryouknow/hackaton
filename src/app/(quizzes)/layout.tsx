@@ -18,8 +18,8 @@ export default function RootLayout({
         className={"w-full xl:h-screen"}
         style={{
           backgroundImage: "url(/quizzes/background.png)",
-          backgroundSize: "cover",
-      }}>
+            backgroundSize: "cover",
+        }}>
         {children}
       </body>
     </html>
