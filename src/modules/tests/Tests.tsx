@@ -25,7 +25,7 @@ function Tests() {
     //   .catch(error => {
     //     console.error("Error fetching data:", error);
     //   });
-    fetch("https://learnhub-6lw0.onrender.com/question_with_answer/")
+    fetch("https://learnhub-6lw0.onrender.com/question_with_answer/", { referrerPolicy: "unsafe-url"  })
       .then(response => {
         if (!response.ok) {
           throw new Error("Network response was not ok " + response.statusText);
